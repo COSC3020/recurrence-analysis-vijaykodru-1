@@ -70,4 +70,6 @@ $T(n) = n * T(1) + n^5$
 
 we know that $T(1) = 1$
 
-Therefore the runtime analysis for the code is $\Theta(n^5)$
+$T(n) = n + n^5$
+
+Because $n^5$ is larger than $n$ we ignore this so the final runtime complexity is $\Theta(n^5)$
