@@ -62,7 +62,13 @@ if we solve for i we get $i=log_3(n)$
 
 substitute this in the above equation we get 
 
-$T(n) = 3^(log_3(n)) * T(n/3^(log_3(n))) + n^5 \sum_{j=0}^{log_3(n)-1}(3^j/3^5j)$
+$T(n) = 3^(log_3(n)) * T(n/3^(log_3(n))) + n^5 \sum_{j=0}^{log_3(n)-1}(3^(-4j))$
+
+This is a geometric series with the first term 1 and common ratio $3^(-4)$
+
+the sum of first i terms is equal to Sum = $(1-r^n)/(1-r)$
+
+Here r is the common ratio which is $3^(-4)$ which is less than 1 which account for $O(1)$ time complexity if solved. So this sum part can be ignored from the total time complexity
 
 using logarithmic functions we know that $3^(log_3(n)) = n$
 
@@ -73,3 +79,10 @@ we know that $T(1) = 1$
 $T(n) = n + n^5$
 
 Because $n^5$ is larger than $n$ we ignore this so the final runtime complexity is $\Theta(n^5)$
+
+
+References: 
+
+I used the following website for the geometriz series formula
+
+https://www.cuemath.com/geometric-sum-formula/
